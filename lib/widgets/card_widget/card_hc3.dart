@@ -188,7 +188,7 @@ class CardHC3 extends StatelessWidget {
       if the formattedText is empty (i.e., it's a placeholder for inserting the entity text) */
       for(int formatIndex=0,entityIndex=0; formatIndex<formattedTexts.length; formatIndex++){
 
-        if(formattedTexts[formatIndex].trim().isNotEmpty){
+        if(formattedTexts[formatIndex].trim().isNotEmpty){ //checking whether the formattedTexts list contains any non-empty text elements
           textSpan.add(TextSpan(
             text: formattedTexts[formatIndex],
           ));
@@ -204,6 +204,7 @@ class CardHC3 extends StatelessWidget {
                   fontSize: entity.fontSize?.toDouble()
               )
           ));
+
           entityIndex++;
         }
       }
