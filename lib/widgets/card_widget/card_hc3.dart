@@ -179,11 +179,13 @@ class CardHC3 extends StatelessWidget {
   }
 
   Widget _richText({required ThemeData theme,}){
-    final formattedTexts=card.formattedTitle?.text.split('{}');
+    final formattedTexts=card.formattedTitle?.text.split('{}'); //splitting the formattedTitle by {}
     final entities=card.formattedTitle?.entities;
 
     final List<TextSpan> textSpan=[];
     if(formattedTexts!=null && entities!=null){
+      /*Iterating over formattedTexts and entities, and increasing the entityIndex value by 1
+      if the formattedText is empty (i.e., it's a placeholder for inserting the entity text) */
       for(int formatIndex=0,entityIndex=0; formatIndex<formattedTexts.length; formatIndex++){
 
         if(formattedTexts[formatIndex].trim().isNotEmpty){
